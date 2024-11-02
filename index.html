@@ -113,6 +113,403 @@
 
 
   <br><br>
+
+<script type="text/javascript">
+  function is_email(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function subscribe() {
+    email = document.getElementById('email').value
+    if(is_email(email)) {
+      window.location = '/subscribe?email=' + email
+    } else {
+      alert('Enter valid email.')
+    }
+  }
+
+  function daily() {
+    document.getElementById("daily").style.color = "lightblue"
+    document.getElementById("daily").style.textDecoration = "underline"
+
+    // document.getElementById("videos").style.color = "white"
+    // document.getElementById("videos").style.textDecoration = "none"
+
+    document.getElementById("essays").style.color = "white"
+    document.getElementById("essays").style.textDecoration = "none"
+
+    // document.getElementById("monthly").style.color = "white"
+    // document.getElementById("monthly").style.textDecoration = "none"
+
+    // document.getElementById("podcasts").style.color = "white"
+    // document.getElementById("podcasts").style.textDecoration = "none"
+
+    document.getElementById("daily_updates").style.display = "block"
+    document.getElementById("essays_updates").style.display = "none"
+    // document.getElementById("videos_updates").style.display = "none"
+    document.getElementById("monthly_updates").style.display = "none"
+    // document.getElementById("podcasts_updates").style.display = "none"
+  }
+
+  function essays() {
+    document.getElementById("daily").style.color = "white"
+    document.getElementById("daily").style.textDecoration = "none"
+
+    // document.getElementById("videos").style.color = "white"
+    // document.getElementById("videos").style.textDecoration = "none"
+
+    document.getElementById("essays").style.color = "lightblue"
+    document.getElementById("essays").style.textDecoration = "underline"
+
+    // document.getElementById("monthly").style.color = "white"
+    // document.getElementById("monthly").style.textDecoration = "none"
+
+    // document.getElementById("podcasts").style.color = "white"
+    // document.getElementById("podcasts").style.textDecoration = "none"
+
+    document.getElementById("daily_updates").style.display = "none"
+    document.getElementById("essays_updates").style.display = "block"
+    // document.getElementById("videos_updates").style.display = "none"
+    document.getElementById("monthly_updates").style.display = "none"
+    // document.getElementById("podcasts_updates").style.display = "none"
+  }
+
+  function videos() {
+    document.getElementById("daily").style.color = "white"
+    document.getElementById("daily").style.textDecoration = "none"
+
+    document.getElementById("videos").style.color = "lightblue"
+    document.getElementById("videos").style.textDecoration = "underline"
+
+    document.getElementById("essays").style.color = "white"
+    document.getElementById("essays").style.textDecoration = "none"
+
+    // document.getElementById("monthly").style.color = "white"
+    // document.getElementById("monthly").style.textDecoration = "none"
+
+    document.getElementById("podcasts").style.color = "white"
+    document.getElementById("podcasts").style.textDecoration = "none"
+
+    document.getElementById("daily_updates").style.display = "none"
+    document.getElementById("essays_updates").style.display = "none"
+    document.getElementById("videos_updates").style.display = "block"
+    document.getElementById("monthly_updates").style.display = "none"
+    document.getElementById("podcasts_updates").style.display = "none"
+  }
+
+  function monthly() {
+    document.getElementById("daily").style.color = "white"
+    document.getElementById("daily").style.textDecoration = "none"
+
+    document.getElementById("videos").style.color = "white"
+    document.getElementById("videos").style.textDecoration = "none"
+
+    document.getElementById("essays").style.color = "white"
+    document.getElementById("essays").style.textDecoration = "none"
+
+    // document.getElementById("monthly").style.color = "lightblue"
+    // document.getElementById("monthly").style.textDecoration = "underline"
+
+    document.getElementById("podcasts").style.color = "white"
+    document.getElementById("podcasts").style.textDecoration = "none"
+
+    document.getElementById("daily_updates").style.display = "none"
+    document.getElementById("essays_updates").style.display = "none"
+    document.getElementById("videos_updates").style.display = "none"
+    document.getElementById("monthly_updates").style.display = "block"
+    document.getElementById("podcasts_updates").style.display = "none"
+  }
+
+  function podcasts() {
+    document.getElementById("daily").style.color = "white"
+    document.getElementById("daily").style.textDecoration = "none"
+
+    document.getElementById("videos").style.color = "white"
+    document.getElementById("videos").style.textDecoration = "none"
+
+    document.getElementById("essays").style.color = "white"
+    document.getElementById("essays").style.textDecoration = "none"
+
+    // document.getElementById("monthly").style.color = "white"
+    // document.getElementById("monthly").style.textDecoration = "none"
+
+    document.getElementById("podcasts").style.color = "lightblue"
+    document.getElementById("podcasts").style.textDecoration = "underline"
+
+    document.getElementById("daily_updates").style.display = "none"
+    document.getElementById("essays_updates").style.display = "none"
+    document.getElementById("monthly_updates").style.display = "none"
+    document.getElementById("videos_updates").style.display = "none"
+    document.getElementById("podcasts_updates").style.display = "block"
+  }
+
+  function toggle_mode(mode){
+    
+    if(mode == 'real'){
+      document.getElementById("2024_real").style.display = "block"
+      document.getElementById("2024_pretentious").style.display = "none"
+
+      document.getElementById("button_real").style.backgroundColor = "lightgreen"
+      document.getElementById("button_pretentious").style.backgroundColor = "grey"
+
+    }else if(mode == 'pretentious'){
+      document.getElementById("2024_real").style.display = "none"
+      document.getElementById("2024_pretentious").style.display = "block"
+
+      document.getElementById("button_real").style.backgroundColor = "grey"
+      document.getElementById("button_pretentious").style.backgroundColor = "lightgreen"
+
+    }
+
+  }
+
+  function toggle_year(year){
+    if(year == '2024'){
+      document.getElementById("toggle_bar").style.display = "block"
+
+      document.getElementById("2024_real").style.display = "block"
+      document.getElementById("2024_pretentious").style.display = "none"
+      document.getElementById("2023").style.display = "none"
+      document.getElementById("2022").style.display = "none"
+      document.getElementById("2021").style.display = "none"
+      document.getElementById("2020").style.display = "none"
+      document.getElementById("2019").style.display = "none"
+      document.getElementById("2018").style.display = "none"
+
+      document.getElementById("button_2024").style.backgroundColor = "white"
+      document.getElementById("button_2023").style.backgroundColor = "grey"
+      document.getElementById("button_2022").style.backgroundColor = "grey"
+      document.getElementById("button_2021").style.backgroundColor = "grey"
+      document.getElementById("button_2020").style.backgroundColor = "grey"
+      document.getElementById("button_2019").style.backgroundColor = "grey"
+      document.getElementById("button_2018").style.backgroundColor = "grey"
+    }else if(year == '2023'){
+      document.getElementById("toggle_bar").style.display = "none"
+
+      document.getElementById("2024_real").style.display = "none"
+      document.getElementById("2024_pretentious").style.display = "none"
+      document.getElementById("2023").style.display = "block"
+      document.getElementById("2022").style.display = "none"
+      document.getElementById("2021").style.display = "none"
+      document.getElementById("2020").style.display = "none"
+      document.getElementById("2019").style.display = "none"
+      document.getElementById("2018").style.display = "none"
+
+      document.getElementById("button_2024").style.backgroundColor = "grey"
+      document.getElementById("button_2023").style.backgroundColor = "white"
+      document.getElementById("button_2022").style.backgroundColor = "grey"
+      document.getElementById("button_2021").style.backgroundColor = "grey"
+      document.getElementById("button_2020").style.backgroundColor = "grey"
+      document.getElementById("button_2019").style.backgroundColor = "grey"
+      document.getElementById("button_2018").style.backgroundColor = "grey"
+    }else if(year == '2022'){
+      document.getElementById("toggle_bar").style.display = "none"
+
+      document.getElementById("2024_real").style.display = "none"
+      document.getElementById("2024_pretentious").style.display = "none"
+      document.getElementById("2023").style.display = "none"
+      document.getElementById("2022").style.display = "block"
+      document.getElementById("2021").style.display = "none"
+      document.getElementById("2020").style.display = "none"
+      document.getElementById("2019").style.display = "none"
+      document.getElementById("2018").style.display = "none"
+
+      document.getElementById("button_2024").style.backgroundColor = "grey"
+      document.getElementById("button_2023").style.backgroundColor = "grey"
+      document.getElementById("button_2022").style.backgroundColor = "white"
+      document.getElementById("button_2021").style.backgroundColor = "grey"
+      document.getElementById("button_2020").style.backgroundColor = "grey"
+      document.getElementById("button_2019").style.backgroundColor = "grey"
+      document.getElementById("button_2018").style.backgroundColor = "grey"
+    }else if(year == '2021'){
+      document.getElementById("toggle_bar").style.display = "none"
+
+      document.getElementById("2024_real").style.display = "none"
+      document.getElementById("2024_pretentious").style.display = "none"
+      document.getElementById("2023").style.display = "none"
+      document.getElementById("2022").style.display = "none"
+      document.getElementById("2021").style.display = "block"
+      document.getElementById("2020").style.display = "none"
+      document.getElementById("2019").style.display = "none"
+      document.getElementById("2018").style.display = "none"
+
+      document.getElementById("button_2024").style.backgroundColor = "grey"
+      document.getElementById("button_2023").style.backgroundColor = "grey"
+      document.getElementById("button_2022").style.backgroundColor = "grey"
+      document.getElementById("button_2021").style.backgroundColor = "white"
+      document.getElementById("button_2020").style.backgroundColor = "grey"
+      document.getElementById("button_2019").style.backgroundColor = "grey"
+      document.getElementById("button_2018").style.backgroundColor = "grey"
+    }else if(year == '2020'){
+      document.getElementById("toggle_bar").style.display = "none"
+
+      document.getElementById("2024_real").style.display = "none"
+      document.getElementById("2024_pretentious").style.display = "none"
+      document.getElementById("2023").style.display = "none"
+      document.getElementById("2022").style.display = "none"
+      document.getElementById("2021").style.display = "none"
+      document.getElementById("2020").style.display = "block"
+      document.getElementById("2019").style.display = "none"
+      document.getElementById("2018").style.display = "none"
+
+      document.getElementById("button_2024").style.backgroundColor = "grey"
+      document.getElementById("button_2023").style.backgroundColor = "grey"
+      document.getElementById("button_2022").style.backgroundColor = "grey"
+      document.getElementById("button_2021").style.backgroundColor = "grey"
+      document.getElementById("button_2020").style.backgroundColor = "white"
+      document.getElementById("button_2019").style.backgroundColor = "grey"
+      document.getElementById("button_2018").style.backgroundColor = "grey"
+    }else if(year == '2019'){
+      document.getElementById("toggle_bar").style.display = "none"
+
+      document.getElementById("2024_real").style.display = "none"
+      document.getElementById("2024_pretentious").style.display = "none"
+      document.getElementById("2023").style.display = "none"
+      document.getElementById("2022").style.display = "none"
+      document.getElementById("2021").style.display = "none"
+      document.getElementById("2020").style.display = "none"
+      document.getElementById("2019").style.display = "block"
+      document.getElementById("2018").style.display = "none"
+
+      document.getElementById("button_2024").style.backgroundColor = "grey"
+      document.getElementById("button_2023").style.backgroundColor = "grey"
+      document.getElementById("button_2022").style.backgroundColor = "grey"
+      document.getElementById("button_2021").style.backgroundColor = "grey"
+      document.getElementById("button_2020").style.backgroundColor = "grey"
+      document.getElementById("button_2019").style.backgroundColor = "white"
+      document.getElementById("button_2018").style.backgroundColor = "grey"
+    }else if(year == '2018'){
+      document.getElementById("toggle_bar").style.display = "none"
+
+      document.getElementById("2024_real").style.display = "none"
+      document.getElementById("2024_pretentious").style.display = "none"
+      document.getElementById("2023").style.display = "none"
+      document.getElementById("2022").style.display = "none"
+      document.getElementById("2021").style.display = "none"
+      document.getElementById("2020").style.display = "none"
+      document.getElementById("2019").style.display = "none"
+      document.getElementById("2018").style.display = "block"
+
+      document.getElementById("button_2024").style.backgroundColor = "grey"
+      document.getElementById("button_2023").style.backgroundColor = "grey"
+      document.getElementById("button_2022").style.backgroundColor = "grey"
+      document.getElementById("button_2021").style.backgroundColor = "grey"
+      document.getElementById("button_2020").style.backgroundColor = "grey"
+      document.getElementById("button_2019").style.backgroundColor = "grey"
+      document.getElementById("button_2018").style.backgroundColor = "white"
+    }
+  }
+
+  function toggle_revenue(interval){
+    var monthly_texts = document.getElementsByClassName("monthly_revenue");
+    var yearly_texts = document.getElementsByClassName("yearly_revenue");
+
+    if(interval == 'monthly'){
+      
+      for(var i = 0; i < monthly_texts.length; i++){
+         monthly_texts[i].style.display = "inline-block"
+      }
+
+      for(var i = 0; i < yearly_texts.length; i++){
+         yearly_texts[i].style.display = "none"
+      }
+
+      document.getElementById("monthly_toggle_button").style.backgroundColor = "white"
+      document.getElementById("yearly_toggle_button").style.backgroundColor = "grey"
+
+    }else if(interval == 'yearly'){
+      
+      for(var i = 0; i < monthly_texts.length; i++){
+         monthly_texts[i].style.display = "none"
+      }
+
+      for(var i = 0; i < yearly_texts.length; i++){
+         yearly_texts[i].style.display = "inline-block"
+      }
+
+      document.getElementById("monthly_toggle_button").style.backgroundColor = "grey"
+      document.getElementById("yearly_toggle_button").style.backgroundColor = "white"
+
+    }
+  }
+
+  function toggle_daily_blog_posts(order){
+    var monthly_texts = document.getElementsByClassName("blog_posts_oldest_to_newest");
+    var yearly_texts = document.getElementsByClassName("blog_posts_newest_to_oldest");
+
+    if(order == 'oldest_to_newest'){
+
+      document.getElementById("newest_to_oldest_toggle_button").style.backgroundColor = "grey"
+      document.getElementById("oldest_to_newest_toggle_button").style.backgroundColor = "white"
+
+      document.getElementById("daily_posts_newest_to_oldest").style.display = "none"
+      document.getElementById("daily_posts_oldest_to_newest").style.display = "block"
+
+    }else if(order == 'newest_to_oldest'){
+
+      document.getElementById("newest_to_oldest_toggle_button").style.backgroundColor = "white"
+      document.getElementById("oldest_to_newest_toggle_button").style.backgroundColor = "grey"
+
+      document.getElementById("daily_posts_newest_to_oldest").style.display = "block"
+      document.getElementById("daily_posts_oldest_to_newest").style.display = "none"
+
+    }
+  }
+
+  function toggle_podcasts(order){
+    var monthly_texts = document.getElementsByClassName("monthly_revenue");
+    var yearly_texts = document.getElementsByClassName("yearly_revenue");
+
+    if(order == 'host'){
+
+      document.getElementById("newest_to_oldest_toggle_button").style.backgroundColor = "grey"
+      document.getElementById("host_toggle_button").style.backgroundColor = "white"
+
+    }else if(order == 'guest'){
+
+      document.getElementById("newest_to_oldest_toggle_button").style.backgroundColor = "white"
+      document.getElementById("host_toggle_button").style.backgroundColor = "grey"
+
+    }
+  }
+
+  function toggle_podcast_types(podcast_type){
+    var host_podcasts = document.getElementsByClassName("host");
+    var guest_podcasts = document.getElementsByClassName("guest");
+
+    if(podcast_type == 'host'){
+      
+      for(var i = 0; i < guest_podcasts.length; i++){
+         guest_podcasts[i].style.display = "none"
+      }
+
+      for(var i = 0; i < host_podcasts.length; i++){
+         host_podcasts[i].style.display = "inline-block"
+      }
+
+      document.getElementById("host_podcast_toggle_button").style.backgroundColor = "white"
+      document.getElementById("guest_podcast_toggle_button").style.backgroundColor = "grey"
+
+    }else{
+
+      for(var i = 0; i < host_podcasts.length; i++){
+         host_podcasts[i].style.display = "none"
+      }
+
+      for(var i = 0; i < guest_podcasts.length; i++){
+         guest_podcasts[i].style.display = "inline-block"
+      }
+
+      document.getElementById("host_podcast_toggle_button").style.backgroundColor = "grey"
+      document.getElementById("guest_podcast_toggle_button").style.backgroundColor = "white"
+
+    }
+  }
+
+  toggle_podcast_types('host')
+
+  </script>
         </body>
 </html>
 
